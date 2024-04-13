@@ -1,0 +1,90 @@
+
+/*
+
+En el siguiente CSS encontramos los estilos del Home Page 
+
+*/
+
+
+
+/*---------------------------------------- ELEMENTOS PORTADA ----------------------*/
+
+.portada{
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	max-width: none;
+}
+
+.portada img{
+	position: absolute;
+	left: -200px;	
+	height: 50%;	
+	z-index: 1;
+}
+
+.portada h1{
+	position: absolute;
+	color: var(--white);
+	font-size: 10em;
+	left: 300px;
+}
+
+.portada h1 span{
+	color: var(--green);
+}
+
+.portada button{
+	padding: 20px 50px;
+	position: absolute;
+	border: 1px solid var(--white);
+	border-radius: 40px;
+	transform: translateY(200px);
+	background-color: rgba(255,255,255,0.2);
+	font-size:1em;
+}
+
+.portada button:hover{
+	letter-spacing: 1px;
+	background-color: var(--green);
+}
+
+
+
+/*---------------------------------------- ELEMENTOS SECCION 3 ----------------------*/
+
+.cuerpoTexto section:nth-child(2)>div{
+	width: 100%;	
+	display: flex;
+	align-items: center;
+	justify-content: space-between;	
+	margin: 20px 0;
+	padding: 10px;
+}
+
+.cuerpoTexto section:nth-child(2)>div div{	
+	padding: 10px;
+}
+
+.cuerpoTexto section:nth-child(2)>div:nth-child(2n +1){	
+	flex-direction: row-reverse;
+}
+
+.cuerpoTexto section:nth-child(2) div a{
+	color: var(--blue);		
+	text-decoration-color: var(--green);	
+	font-weight: 600;
+}
+
+.cuerpoTexto section:nth-child(2) div img{
+	max-width: 300px;
+}
+
+.cuerpoTexto section:nth-child(2) div p{	
+	text-decoration: none;	
+	color: var(--blue);
+}
+
+

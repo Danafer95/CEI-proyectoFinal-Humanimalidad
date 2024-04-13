@@ -1,0 +1,150 @@
+
+/*
+
+En el siguiente CSS encontramos los estilos generales de los ficheros. 
+
+*/
+
+
+
+/*---------------------------------------- ELEMENTOS GENERALES ----------------------*/ 
+
+:root{
+	--green : #a1cf17; 
+	--blue: #191e29;
+	--brown: #8e6e53;
+	--white: #ffffed;
+}	
+
+
+*{
+	margin:0;
+	padding:0;
+
+	font-family: "Montserrat", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: <weight>;
+	font-style: normal;
+
+}
+
+
+button{
+	-webkit-appareance:none;
+	appearance: none;
+	border:none;
+	background-color: transparent;
+	cursor: pointer;
+
+}
+
+body{
+
+	min-height: 100vh;
+	background: linear-gradient(to bottom, var(--blue), 15%, var(--white));
+	overflow-x: hidden;
+	scroll-behavior: smooth;
+}
+
+ul{
+	list-style-type: none;
+}
+
+
+.cuerpoTexto{
+	width:100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+/*---------------------------------------- ELEMENTOS DEL HEADER ----------------------*/
+
+header{
+	height: 90px;
+	width: 100%;
+	box-shadow: 0px 5px 20px 1px rgb(0 0 0 / 20%);
+	position: fixed;
+	right: 0;
+	backdrop-filter: blur(5px);
+	background-color: rgba(25,30,41,0.3);
+	z-index: 10;
+}
+
+nav{
+	height: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+nav a {
+	height: 80%;	
+	margin: 0 20px;
+}
+
+nav a img{
+	height: 100%;
+}
+
+nav ul{
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	width: 250px;
+	
+}
+
+nav ul a{
+	text-decoration: none;
+	color: var(--white);	
+	transition: 5ms;
+}
+
+nav ul a:hover{	
+	color: var(--green);
+}
+
+
+/*---------------------------------------- ESTILOS SECTION GENERALES ----------------------*/
+.cuerpoTexto section{
+	padding: 0 5%;
+	max-width: 900px;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	color: var(--blue);
+	margin-bottom: 50px;
+}
+
+.cuerpoTexto section h2{
+	font-size: 3em;
+	margin: 10px 0 30px;
+}
+
+.cuerpoTexto section p{
+	margin: 10px 0;
+}
+
+
+/*---------------------------------------- FOOTER ----------------------*/
+
+footer{	
+	height: 90px;	
+	background-color: var(--blue);	
+	color: var(--white);	
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+footer ul{
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+footer ul li{
+	margin: 0 20px;
+}
+

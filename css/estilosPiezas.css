@@ -1,0 +1,22 @@
+
+/*
+
+En el siguiente CSS encontramos los estilos de los ficheros con piezas. 
+
+*/
+
+.containerPiezas{padding-top: 200px;display: flex;align-items: center;justify-content: center;}
+
+.containerPiezas-marco{
+	width: 500px;
+	height: 500px;
+	overflow: hidden;
+	/*background-image: url("img/test1.jpg") no-repeat center / cover;*/
+	border-radius: 10px;
+}
+
+.containerPiezas-marco img{
+	width: 100%;
+	position: relative;
+	cursor: pointer;
+}

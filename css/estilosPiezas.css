@@ -5,13 +5,17 @@ En el siguiente CSS encontramos los estilos de los ficheros con piezas.
 
 */
 
-.containerPiezas{padding-top: 200px;display: flex;align-items: center;justify-content: center;}
+.containerPiezas{
+	padding-top: 200px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
 
 .containerPiezas-marco{
 	width: 500px;
 	height: 500px;
 	overflow: hidden;
-	/*background-image: url("img/test1.jpg") no-repeat center / cover;*/
 	border-radius: 10px;
 }
 
@@ -19,4 +23,117 @@ En el siguiente CSS encontramos los estilos de los ficheros con piezas.
 	width: 100%;
 	position: relative;
 	cursor: pointer;
+}
+
+
+.cuerpoTexto  section:first-child li{
+display: flex;
+align-items: center;
+}
+
+.cuerpoTexto section li img{
+	width: 150px;
+	margin: 0 10px;
+}
+
+.cuerpoTexto section:last-child ul{
+	list-style: disc;
+}
+
+.cuerpoTexto section:last-child li{
+	margin: 20px 0;
+}
+
+
+
+.cuerpoTexto section:last-child a{
+
+		word-wrap: break-word; 
+		white-space: normal; 
+	
+}
+
+.info{
+
+margin: 20px auto;
+
+max-width: 900px;
+
+display: flex;
+
+flex-direction: column;
+
+align-items: center;
+
+justify-content: center;
+}
+
+
+.tabs{
+	padding:20px;
+	width: 100%;
+}
+
+.tabs ul{
+	display:flex;
+	list-style: none;
+	width: 100%;
+}
+
+.tabs button{
+	-webkit-appearance: none;
+	appearance: none;
+	background-color: transparent;
+	width: 70px;
+	height: 70px;
+	font-size:1.5em;
+	border: 1px solid var(--blue);
+	border-radius: 50%;
+	display:block;
+	padding: 15px;
+	cursor: pointer;
+}
+
+.tabs button.activo{
+	border: 1px solid var(--green);
+	background-color: var(--green);
+}
+
+
+.paneles{
+	width: 100%;
+	text-align: center;
+}
+
+
+.panel{
+	padding: 20px 0;
+	display: none;
+}
+
+
+.panel.activo{
+	display:block;
+	animation: fade 0.5s;
+}
+
+
+.panel h2{
+	font-size: 2.2em;
+}
+
+.panel p{
+	margin-top: 10px;
+	font-size: 1.5em;
+}
+
+
+@keyframes fade{
+	from{
+		opacity: 0;
+	}
+
+	to{
+		opacity: 1;
+	}
 }

@@ -23,7 +23,6 @@ En el siguiente CSS encontramos los estilos generales de los ficheros.
 
 	font-family: "Montserrat", sans-serif;
 	font-optical-sizing: auto;
-	font-weight: <weight>;
 	font-style: normal;
 
 }
@@ -47,9 +46,8 @@ body{
 }
 
 ul{
-	list-style-type: none;
+	list-style: none;
 }
-
 
 .cuerpoTexto{
 	width:100%;
@@ -57,6 +55,16 @@ ul{
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+}
+
+a{
+	color: var(--blue);		
+	text-decoration-color: var(--green);	
+	font-weight: 600;
+}
+
+a:hover{
+	color: var(--green);		
 }
 
 /*---------------------------------------- ELEMENTOS DEL HEADER ----------------------*/
@@ -93,6 +101,7 @@ nav ul{
 	justify-content: space-around;
 	width: 250px;
 	
+	
 }
 
 nav ul a{
@@ -111,7 +120,7 @@ nav ul a:hover{
 	padding: 0 5%;
 	max-width: 900px;
 	display: flex;
-	align-items: center;
+	align-items: start;
 	flex-direction: column;
 	color: var(--blue);
 	margin-bottom: 50px;
@@ -119,7 +128,11 @@ nav ul a:hover{
 
 .cuerpoTexto section h2{
 	font-size: 3em;
-	margin: 10px 0 30px;
+	margin: 10px auto 30px;
+}
+
+.cuerpoTexto section h3{
+	margin: 20px 0;
 }
 
 .cuerpoTexto section p{

@@ -45,9 +45,10 @@ function homeInit(){
 function piecesInit(){
 
 	const elContainer = document.querySelector(".containerPiezas-marco");
+	let elContainerHeight;
 	const laImagen = document.querySelector(".containerPiezas-marco img");
 	let posStart = 0; //posición inicial de la imagen dentro del contenedor
-	let posChange = 500; //Esta variable sirve para el desplazamiento de la imagen en la rotación explicada más adelante
+	let posChange; //Esta variable sirve para el desplazamiento de la imagen en la rotación explicada más adelante
 	let startPosX = 0; // Con esta variable reconocemos el punto inicial de donde el usuario dio click
 
 	let isMouseDown = false; // Con esta variable traqueamos si mouseDown/touchDown esta activo
@@ -64,12 +65,15 @@ function piecesInit(){
 	--------------------------------------------------------*/
 
 	function initialSetup(event){
+		elContainerHeight = parseInt(window.getComputedStyle(elContainer).height);
+		posChange = elContainerHeight;
 		// Prevenir el default del evento
 		event.preventDefault();
 		// Cuando el mouse se presiona esta variable se convierte en true
 		isMouseDown = true;
 		// almacenamos la posición inicial en X del mouse del usuario 
 		startPosX = event.clientX;
+		
 	}
 
 	/*--------------------------------------------------------
@@ -95,11 +99,18 @@ function piecesInit(){
 	--------------------------------------------------------*/
 
 
-	function imageMove (event){
+	function imageMove(event){
 		if (isMouseDown) {
-
+			
+			
 		    // Calcular la diferencia de la posicion X comparando desde donde inicio
-			let currentPosX = event.clientX;
+
+			//esta variable va a ser la posición inicial del usuario 
+			let currentPosX; 
+			//este toggle sirve para identificar si se trata de un dispositivo mobile o el usuario esta rotando desde desktop
+			event instanceof  MouseEvent ? currentPosX = event.clientX : currentPosX = event.touches[0].clientX; 
+
+			//diffX para calcula la diferencia cuando usuario se mueve en X
 			let diffX = currentPosX - startPosX;
 
 		     // Si diffX es mayor a cero, mouse se movio a la derecha. Si diffX es menor a cero, mouse se movio a la izquieda.
@@ -107,7 +118,7 @@ function piecesInit(){
 		            // Mouse se mueve a la derecha
 				if(posStart < (laImagen.height - posChange)){
 					posStart += posChange;
-					console.log('se sumo' + posStart);
+					//console.log('se sumo' + posStart);
 					laImagen.style.top = `-${posStart}px`;
 				}else{
 					posStart = 0;
@@ -124,7 +135,7 @@ function piecesInit(){
 
 				if(posStart > 0){
 					posStart -= posChange;
-					console.log('se resto' + posStart);
+					//console.log('se resto' + posStart);
 					laImagen.style.top = `-${posStart}px`;
 				}
 			}
@@ -132,6 +143,7 @@ function piecesInit(){
 			startPosX = currentPosX;
 		}
 	}
+
 
 	//Aqui asignamos los eventos que elContainer debe escuchar
 
@@ -160,3 +172,40 @@ function piecesInit(){
 
 }
 
+
+
+
+//---------------------------------------------------------- PANELES
+
+const botones = document.querySelectorAll(".tabs button");
+const paneles = document.querySelectorAll(".panel");
+
+
+botones.forEach((obj,i)=>{
+	
+	obj.addEventListener("click", ()=>{
+		!obj.classList.contains("activo") ? elToggle(i) : quitarActivo();
+	})
+
+});
+
+
+
+function elToggle(i){
+	quitarActivo();
+	ponerActivo(i);
+}
+
+
+
+function quitarActivo(){
+	for(let i=0; i<botones.length; i++){
+		botones[i].classList.remove("activo");
+		paneles[i].classList.remove("activo");
+	}
+}
+
+function ponerActivo(i){
+	botones[i].classList.add("activo");
+	paneles[i].classList.add("activo");
+}

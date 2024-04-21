@@ -61,15 +61,15 @@ En el siguiente CSS encontramos los estilos del Home Page
 	align-items: center;
 	justify-content: flex-start;
 	margin: 20px 0;
-	padding: 10px;
 }
 
 .cuerpoTexto section:nth-child(2)>div div{	
 	padding: 10px;
 }
 
-.cuerpoTexto section:nth-child(2)>div:nth-child(2n +1){	
+.cuerpoTexto section:nth-child(2)>div:nth-child(2n +1){
 	flex-direction: row-reverse;
+	text-align: end;
 }
 
 
@@ -82,4 +82,72 @@ En el siguiente CSS encontramos los estilos del Home Page
 	color: var(--blue);
 }
 
+.cuerpoTexto section:nth-child(2) h4{
+	font-size: 2em;
+	text-transform: uppercase;
+}
 
+
+
+/*-----------------------MEDIA QUERIES--------------------------*/
+
+
+/*TABLET*/
+
+
+@media only screen and (max-width: 900px) {
+	.portada img{
+		left: -100px;
+		height: 25%;
+		z-index: 1;
+	}
+
+	.portada h1{
+		font-size: 5em;
+		left: 150px;
+	}
+
+	.cuerpoTexto section:nth-child(2) div img {
+		max-width: 200px;
+	}
+  
+}
+
+
+/*MOBILE*/
+
+
+@media only screen and (max-width: 500px) {
+
+	
+	.portada img{
+		left: -50px;
+		height: 12.5%;
+		z-index: 1;
+	}
+
+	.portada h1{
+		font-size: 2.5em;
+		left: 75px;
+	}
+
+	.cuerpoTexto section h2{
+		font-size: 2em;
+	}
+
+
+	.cuerpoTexto section:nth-child(2) h4{
+		font-size: 1.5em;
+	}
+
+	.cuerpoTexto section:nth-child(2) div img {
+		max-width: 150px;
+	}
+
+	.cuerpoTexto section:nth-child(2)>div, .cuerpoTexto section:nth-child(2)>div:nth-child(2n +1){
+		flex-direction: column;
+		text-align: center;
+	}
+	
+  
+}

@@ -55,27 +55,25 @@ align-items: center;
 
 .info{
 
-margin: 20px auto;
-
-max-width: 900px;
-
-display: flex;
-
-flex-direction: column;
-
-align-items: center;
-
-justify-content: center;
+	margin: 20px auto;
+	max-width: 900px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	border-bottom: 1px dashed var(--blue);
+	padding: 40px 0;
 }
 
 
 .tabs{
-	padding:20px;
+	padding: 20px 0;
 	width: 100%;
 }
 
 .tabs ul{
 	display:flex;
+	justify-content: space-evenly;
 	list-style: none;
 	width: 100%;
 }
@@ -136,4 +134,35 @@ justify-content: center;
 	to{
 		opacity: 1;
 	}
+}
+
+
+@media screen and (max-width:500px){
+
+	.containerPiezas-marco{
+		width: 280px;
+		height: 280px;
+	}
+
+	.cuerpoTexto section:last-child li{
+		flex-direction: column;
+
+	}
+
+	.panel h2, .panel p{
+		font-size: 1.5em;
+	}
+
+	.tabs button{
+
+	width: calc(100%/6);
+	height: calc(100% / 6);
+	font-size: 1em;
+	padding:18px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+}
+
 }

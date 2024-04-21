@@ -15,12 +15,13 @@
 function homeInit(){
 	let tigreIMG = document.querySelector(".portada img");
 	let tituloPrincipal= document.querySelector(".portada h1");
-
 	//Decidi agarrar exactamente el punto inicial de como setie mi left en CSS para que si modifico a futuro esta posición se adapte
-	const startValueIMG = parseInt(window.getComputedStyle(tigreIMG).getPropertyValue('left'));
-	const startValueTitle = parseInt(window.getComputedStyle(tituloPrincipal).getPropertyValue('left'));
-
+	let startValueIMG = parseInt(window.getComputedStyle(tigreIMG).getPropertyValue('left'));
+	let startValueTitle = parseInt(window.getComputedStyle(tituloPrincipal).getPropertyValue('left'));
+	
 	window.addEventListener("scroll", ()=>{
+		
+
 		let value = window.scrollY;
 		
 		console.log(startValueIMG, startValueTitle);
@@ -177,11 +178,11 @@ function piecesInit(){
 
 //---------------------------------------------------------- PANELES
 
-const botones = document.querySelectorAll(".tabs button");
+const btnTabs = document.querySelectorAll(".tabs button");
 const paneles = document.querySelectorAll(".panel");
 
 
-botones.forEach((obj,i)=>{
+btnTabs.forEach((obj,i)=>{
 	
 	obj.addEventListener("click", ()=>{
 		!obj.classList.contains("activo") ? elToggle(i) : quitarActivo();
@@ -199,13 +200,29 @@ function elToggle(i){
 
 
 function quitarActivo(){
-	for(let i=0; i<botones.length; i++){
-		botones[i].classList.remove("activo");
+	for(let i=0; i<btnTabs.length; i++){
+		btnTabs[i].classList.remove("activo");
 		paneles[i].classList.remove("activo");
 	}
 }
 
 function ponerActivo(i){
-	botones[i].classList.add("activo");
+	btnTabs[i].classList.add("activo");
 	paneles[i].classList.add("activo");
 }
+
+/*---------------NAV----------------*/
+
+const navegacion = document.querySelector("nav");
+const btnNav = document.querySelectorAll(".abrir , .cerrar");
+
+
+
+btnNav.forEach((obj)=>{
+
+	obj.addEventListener("click",()=>{
+		navegacion.classList.toggle("desplegado");
+	});
+
+
+}); 

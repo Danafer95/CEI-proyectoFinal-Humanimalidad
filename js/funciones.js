@@ -13,6 +13,8 @@
 
 //Estos son los elementos que vamos a mover
 function homeInit(){
+
+
 	let tigreIMG = document.querySelector(".portada img");
 	let tituloPrincipal= document.querySelector(".portada h1");
 	//Decidi agarrar exactamente el punto inicial de como setie mi left en CSS para que si modifico a futuro esta posición se adapte
@@ -29,9 +31,29 @@ function homeInit(){
 		tigreIMG.style.left = (startValueIMG + (value * 0.1)) + "px"; //Para ser precisa con el valor usamos el starting point y le sumamos el valor de scrollY * 0.1 para que no sea muy grande el salto del scroll
 		tituloPrincipal.style.left = (startValueTitle - value) + "px"; //Aquí con el valor initial del titulo le vamos a restar el valor porq quiero q se mueva hacia la izquierda
 	})
+
+	/*--------------------------------------------------------
+	scrollToSection()
+
+	Parametros: ninguno
+	Que hace: La funcion es para que el botón de click y vaya a la siguiente sección
+
+	--------------------------------------------------------*/
+	const btnExplorar = document.querySelector(".portada button");
+	const toSection = document.querySelector(".cuerpoTexto section:first-child");
+
+	btnExplorar.addEventListener('click', () => {
+		const topOfElement = toSection.offsetTop;
+		window.scrollTo({
+			top: topOfElement - 110,
+			behavior: 'smooth'  // This makes the scroll movement smooth
+		});
+	});
 }
 
 
+	
+	
 
 
 /*--------------------------------------------------------

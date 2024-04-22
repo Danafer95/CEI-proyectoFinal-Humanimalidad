@@ -165,15 +165,6 @@ footer{
 	align-items: center;
 }
 
-footer ul{
-	display: flex;
-	justify-content: space-evenly;
-	align-items: center;
-}
-
-footer ul li{
-	margin: 0 20px;
-}
 
 
 

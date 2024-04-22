@@ -10,6 +10,7 @@ En el siguiente CSS encontramos los estilos de los ficheros con piezas.
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	flex-direction: column;
 }
 
 .containerPiezas-marco{
@@ -17,6 +18,7 @@ En el siguiente CSS encontramos los estilos de los ficheros con piezas.
 	height: 500px;
 	overflow: hidden;
 	border-radius: 10px;
+	margin: 10px 0;
 }
 
 .containerPiezas-marco img{
@@ -25,6 +27,12 @@ En el siguiente CSS encontramos los estilos de los ficheros con piezas.
 	cursor: pointer;
 }
 
+.cuerpoTexto  section:first-child img{
+	
+	width: 300px;
+	margin: 15px auto;
+	border-radius: 10px;
+}
 
 .cuerpoTexto  section:first-child li{
 display: flex;
@@ -36,22 +44,46 @@ align-items: center;
 	margin: 0 10px;
 }
 
-.cuerpoTexto section:last-child ul{
+.cuerpoTexto section:nth-child(2) ul{
 	list-style: disc;
 }
 
-.cuerpoTexto section:last-child li{
+.cuerpoTexto section:nth-child(2) li{
 	margin: 20px 0;
 }
 
+/*---------------------------------------------------------*/
 
-
-.cuerpoTexto section:last-child a{
-
-		word-wrap: break-word; 
-		white-space: normal; 
-	
+.verMasElementos div{
+	display: flex;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
 }
+
+.verMasElementos div a{
+	margin: 5px;
+	border: 1px solid var(--blue);
+	border-radius: 5px;
+	display: flex;
+	align-items: center;
+	transition: top 200ms, border 200ms, background-color 200ms;
+	position: relative;
+	top: 0;
+}
+
+.verMasElementos div a:hover{
+	top: -5px;
+	border: 1px solid var(--green);
+	background-color: var(--green);
+}
+
+.verMasElementos div img{
+	width: 100px;
+}
+
+
+/*---------------------------------------------------------*/
+
 
 .info{
 
@@ -136,12 +168,22 @@ align-items: center;
 	}
 }
 
+/*---------------------------------------------------------*/
+
 
 @media screen and (max-width:500px){
+
+
 
 	.containerPiezas-marco{
 		width: 280px;
 		height: 280px;
+	}
+
+	.cuerpoTexto  section:first-child img{
+	
+		width: 250px;
+
 	}
 
 	.cuerpoTexto section:last-child li{
@@ -163,6 +205,19 @@ align-items: center;
 	align-items: center;
 	justify-content: center;
 
+	}
+
 }
+
+@media screen and (max-width:800px){
+
+	.cuerpoTexto  section:first-child li{
+		flex-direction: column;
+	}
+
+	.verMasElementos div{
+		margin: 0 auto;
+		max-width: 400px;
+	}
 
 }

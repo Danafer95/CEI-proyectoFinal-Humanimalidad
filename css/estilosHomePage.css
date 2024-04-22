@@ -16,6 +16,7 @@ En el siguiente CSS encontramos los estilos del Home Page
 	justify-content: center;
 	height: 100vh;
 	max-width: none;
+	overflow: hidden;
 }
 
 .portada img{
@@ -52,8 +53,8 @@ En el siguiente CSS encontramos los estilos del Home Page
 }
 
 
-
 /*---------------------------------------- ELEMENTOS SECCION 3 ----------------------*/
+
 
 .cuerpoTexto section:nth-child(2)>div{
 	width: 100%;
@@ -67,7 +68,7 @@ En el siguiente CSS encontramos los estilos del Home Page
 	padding: 10px;
 }
 
-.cuerpoTexto section:nth-child(2)>div:nth-child(2n +1){
+.cuerpoTexto section:nth-child(2)>div:nth-child(even){
 	flex-direction: row-reverse;
 	text-align: end;
 }
@@ -127,7 +128,7 @@ En el siguiente CSS encontramos los estilos del Home Page
 	}
 
 	.portada h1{
-		font-size: 2.5em;
+		font-size: 1.4em;
 		left: 75px;
 	}
 
@@ -144,7 +145,7 @@ En el siguiente CSS encontramos los estilos del Home Page
 		max-width: 150px;
 	}
 
-	.cuerpoTexto section:nth-child(2)>div, .cuerpoTexto section:nth-child(2)>div:nth-child(2n +1){
+	.cuerpoTexto section:nth-child(2)>div, .cuerpoTexto section:nth-child(2)>div:nth-child(even){
 		flex-direction: column;
 		text-align: center;
 	}

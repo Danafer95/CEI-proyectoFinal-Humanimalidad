@@ -69,7 +69,7 @@ function piecesInit(){
 
 	const elContainer = document.querySelector(".containerPiezas-marco");
 	let elContainerHeight;
-	const laImagen = document.querySelector(".containerPiezas-marco img");
+	const laImagen = document.querySelector(".containerPiezas-marco>img");
 	let posStart = 0; //posición inicial de la imagen dentro del contenedor
 	let posChange; //Esta variable sirve para el desplazamiento de la imagen en la rotación explicada más adelante
 	let startPosX = 0; // Con esta variable reconocemos el punto inicial de donde el usuario dio click

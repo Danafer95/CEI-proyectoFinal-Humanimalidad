@@ -1,0 +1,95 @@
+
+/*
+
+En el siguiente CSS encontramos los estilos generales de los ficheros. 
+
+*/
+
+
+
+
+
+/*---------------------------------------- ESTILOS SECTION EQUIPOS Y CONTACTO ----------------------*/
+section{
+
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 90px 5%;
+}
+    
+section h1{
+    font-size: 3em;
+    margin: 20px 0;
+ }
+    
+section iframe{
+    width: 100%;
+    border-radius: 20px;
+    margin: 20px 0;
+}
+
+section ul{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+section ul li:nth-child(2){     
+    margin: 0 10px;   
+}
+
+section ul li:not(:last-child){  
+    border-right: 1px solid var(--blue);
+    padding-right: 5px;
+}
+
+
+/*--------------------------------------EQUIPO--------------------------------------------*/
+
+.teamContainerHome{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.teamContainerHome .teamCard{
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    flex: 1;
+}
+
+
+.teamContainerHome .teamCard img{
+    width: 200px;  
+    border-radius: 10px;   
+    margin: 5px;
+}
+
+
+/*--------------------------------------MEDIA QUERIES--------------------------------------------*/
+
+@media screen and (max-width:730px){
+
+    section ul{
+    flex-direction: column;
+    }
+
+    section ul li:nth-child(2){     
+        margin: 0;   
+    }
+
+    section ul li:not(:last-child){  
+        border-right: none;
+        padding-right: 0;
+    }
+
+    section ul li{     
+        margin: 10px;   
+    }
+
+
+}

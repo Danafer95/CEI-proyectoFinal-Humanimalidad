@@ -34,10 +34,15 @@ En el siguiente CSS encontramos los estilos de los ficheros con piezas.
 	border-radius: 10px;
 }
 
-.cuerpoTexto  section:first-child li{
-display: flex;
-align-items: center;
+.cuerpoTexto  section:first-child li img{
+	
+width: 200px;
+height: 200px;
+margin: 10px;
+border-radius: 50%;
 }
+
+.cuerpoTexto  section:first-child li{display: flex;align-items: center;}
 
 .cuerpoTexto section li img{
 	width: 150px;

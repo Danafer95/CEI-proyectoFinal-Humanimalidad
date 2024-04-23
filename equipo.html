@@ -1,0 +1,79 @@
+<!--
+
+El proyecto Humanimalidad tiene como objetivo mostrar las piezas arqueológicas de la cultura Jama Coaque en Ecuador.
+
+El siguiente fichero tiene la siguiente estructura:
+
+1. Header | Logo del proyecto "Humanimalidad" , Navegación -> Botón para navegar a la biografía de la arqueologa y otro para el contacto de la misma
+2. Section 1 |  Portada del proyecto 
+3. cuerpoTexto | que se utiliza para centrar las secciones despues de la portada, ya que estas tendrán un ancho máximo
+4. Section 2 |  La primera sección contiene la información de la exposición
+5. Section 3 | Aquí encontranmos una vectorización de las piezas para que el usuario de click y se redirija a ver cada pieza a detalle
+6. Footer | Información extra acerca de la página y su desarrollo
+
+
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Equipo</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/main_estilos.css">
+	<link rel="stylesheet" href="css/contacto_equipo.css">
+	<script defer src="js/funciones.js"></script>
+</head>
+<body>
+	<header>
+		<a href="index.html"><img src="imgs/logoBlanco.png" alt=""></a>
+		<button class="abrir">
+			<span></span>
+			<span></span>
+			<span></span>
+		</button>
+		<nav>
+			<button class="cerrar">X</button>
+			<ul>
+				<li><a href="equipo.html">Equipo</a></li>
+				<li><a href="contacto.html">Contacto</a></li>
+			</ul>
+		</nav>
+		
+	</header>
+	
+		<section>
+            <h1>Equipo</h1>
+			<div class="teamContainerHome">
+				<div class="teamCard">
+					<img src="imgs/Gygy.jpg" alt="">
+					<p>Antrop. Eddgy Vargas Crespo</p>
+					<p>Co-curadora</p>
+                    <p>gynebre@gmail.com</p>
+				</div>
+				<div class="teamCard">
+					<img src="imgs/Isaac.jpg" alt="">
+					<p>Antrop. Isaac Garcés</p>
+					<p>Co-curador</p>
+                    <p>isaaacgarces@hotmail.com</p>
+				</div>
+                <div class="teamCard">
+					<img src="imgs/Ximena.jpg" alt="">
+					<p>Antrop. Ximena Quintana</p>
+					<p>Co-curadora</p>
+                    <p>xime.quintana.93@gmail.com</p>
+				</div>
+			</div>
+		</section>
+		
+
+
+	<footer>
+		<p>Desarrollado por: @danafer95</p>
+	</footer>
+
+</body>
+</html>

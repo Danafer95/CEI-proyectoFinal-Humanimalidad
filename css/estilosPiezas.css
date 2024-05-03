@@ -5,6 +5,9 @@ En el siguiente CSS encontramos los estilos de los ficheros con piezas.
 
 */
 
+
+
+/*---------------------------CSS DEL CONTAINER DE LAS PIEZAS QUE GIRAN-----------------------------*/
 .containerPiezas{
 	padding-top: 200px;
 	display: flex;
@@ -49,68 +52,8 @@ En el siguiente CSS encontramos los estilos de los ficheros con piezas.
 	cursor: pointer;
 }
 
-.cuerpoTexto  section:first-child img{
-	width: 300px;
-	margin: 15px auto;
-	border-radius: 10px;
-}
 
-.cuerpoTexto  section:first-child li img{
-	width: 200px;
-	height: 200px;
-	margin: 10px;
-	border-radius: 50%;
-}
-
-.cuerpoTexto  section:first-child li{
-	display: flex;
-	align-items: center;
-}
-
-.cuerpoTexto section li img{
-	width: 150px;
-	margin: 0 10px;
-}
-
-.cuerpoTexto section:nth-child(2) ul{
-	list-style: disc;
-}
-
-.cuerpoTexto section:nth-child(2) li{
-	margin: 20px 0;
-}
-
-/*---------------------------------------------------------*/
-
-.verMasElementos div{
-	display: flex;
-	justify-content: space-evenly;
-	flex-wrap: wrap;
-}
-
-.verMasElementos div a{
-	margin: 5px;
-	border: 1px solid var(--blue);
-	border-radius: 5px;
-	display: flex;
-	align-items: center;
-	transition: top 200ms, border 200ms, background-color 200ms;
-	position: relative;
-	top: 0;
-}
-
-.verMasElementos div a:hover{
-	top: -5px;
-	border: 1px solid var(--green);
-	background-color: var(--green);
-}
-
-.verMasElementos div img{
-	width: 100px;
-}
-
-
-/*---------------------------------------------------------*/
+/*---------------------------CSS DE LAS TABS CON INFORMACIÓN DE CADA PIEZA------------------------------*/
 
 
 .info{
@@ -206,7 +149,82 @@ width: 100%;
 	}
 }
 
-/*---------------------------------------------------------*/
+/*-------------------------CSS de la sección donde esta la información de detalle--------------------------------*/
+
+
+.cuerpoTexto  div:first-child img{
+	width: 300px;
+	margin: 15px auto;
+	border-radius: 10px;
+}
+
+ /*Esta parte aplica para aquellos divs que tienen li en el texto*/
+
+.cuerpoTexto  div:first-child li img{
+	width: 200px;
+	height: 200px;
+	margin: 10px;
+	border-radius: 50%;
+}
+
+.cuerpoTexto  div:first-child li{
+	display: flex;
+	align-items: center;
+}
+
+.cuerpoTexto div li img{
+	width: 150px;
+	margin: 0 10px;
+}
+
+.cuerpoTexto div:nth-child(2) ul{
+	list-style: disc;
+}
+
+.cuerpoTexto div:nth-child(2) li{
+	margin: 20px 0;
+}
+
+/*-----------------------CSS de los elementos para seguir navegando las piezas----------------------------------*/
+
+.verMasElementos {
+	margin: 0 auto 30px;
+	max-width: 900px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+.verMasElementos div{
+	display: flex;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+}
+
+.verMasElementos div a{
+	margin: 5px;
+	border: 1px solid var(--blue);
+	border-radius: 5px;
+	display: flex;
+	align-items: center;
+	transition: top 200ms, border 200ms, background-color 200ms;
+	position: relative;
+	top: 0;
+}
+
+.verMasElementos div a:hover{
+	top: -5px;
+	border: 1px solid var(--green);
+	background-color: var(--green);
+}
+
+.verMasElementos div img{
+	width: 100px;
+}
+
+
+/*-------------------------MEDIA QUERIES -----------------------*/
 
 
 @media screen and (max-width:500px){
@@ -218,17 +236,17 @@ width: 100%;
 		height: 280px;
 	}
 
-	.cuerpoTexto  section:first-child img{
+	.cuerpoTexto  div:first-child img{
 		width: 250px;
 	}
 
-	.cuerpoTexto section:last-child li{
+	.cuerpoTexto div:last-child li{
 		flex-direction: column;
 
 	}
 
 	.panel h2, .panel p{
-		font-size: 1.5em;
+		font-size: 1.2em;
 	}
 
 	.tabs li{
@@ -240,7 +258,7 @@ width: 100%;
 
 	.tabs button{
 		font-size: 1em;
-		padding: 5px;
+		padding: 17px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -263,12 +281,12 @@ width: 100%;
 
 @media screen and (max-width:800px){
 
-	.cuerpoTexto  section:first-child li{
+	.cuerpoTexto  div:first-child li{
 		flex-direction: column;
 	}
 
 	.verMasElementos div{
-		margin: 0 auto;
+		margin: 20px auto;
 		max-width: 400px;
 	}
 

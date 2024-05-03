@@ -125,8 +125,8 @@ nav ul a:hover{
 
 
 
-/*---------------------------------------- ESTILOS SECTION GENERALES ----------------------*/
-.cuerpoTexto section{
+/*---------------------------------------- ESTILOS SECTION GENERALES DEL CUERPO TEXTO----------------------*/
+.cuerpoTexto>div{
 	padding: 0 5%;
 	max-width: 900px;
 	display: flex;
@@ -136,19 +136,19 @@ nav ul a:hover{
 	margin-bottom: 50px;
 }
 
-.cuerpoTexto section h2{
+.cuerpoTexto>div h2{
 	font-size: 3em;
 	margin: 10px auto 30px;
 	text-transform: uppercase;
 }
 
-.cuerpoTexto section h3{
+.cuerpoTexto>div h3{
 	margin: 50px auto;
 	font-size: 3em;
 	text-align: center;
 }
 
-.cuerpoTexto section p{
+.cuerpoTexto>div p{
 	margin: 10px 0;
 	text-align: justify;
 }
@@ -166,13 +166,13 @@ footer{
 }
 
 
-
+/*---------------------------------------- MEGIA QUERIES ----------------------*/
 
 
 @media screen and (max-width:600px){
 
 
-	.cuerpoTexto section h3{
+	.cuerpoTexto>div h3{
 		font-size: 1.5em;
 	}
 
@@ -236,7 +236,7 @@ footer{
 		height: 4px;
 		background-color: var(--green);
 		margin-bottom:5px;
-	}
+	}	
 
 	header a img{
 		width: 100px;

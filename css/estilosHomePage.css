@@ -53,10 +53,10 @@ En el siguiente CSS encontramos los estilos del Home Page
 }
 
 
-/*---------------------------------------- ELEMENTOS SECCION 3 ----------------------*/
+/*---------------------------------------- ELEMENTOS CUERPO TEXTO ----------------------*/
 
 
-.cuerpoTexto section:nth-child(2)>div{
+.cuerpoTexto>div:nth-child(2)>div{
 	width: 100%;
 	display: flex;
 	align-items: center;
@@ -64,26 +64,26 @@ En el siguiente CSS encontramos los estilos del Home Page
 	margin: 20px 0;
 }
 
-.cuerpoTexto section:nth-child(2)>div div{	
+.cuerpoTexto>div:nth-child(2)>div div{	
 	padding: 10px;
 }
 
-.cuerpoTexto section:nth-child(2)>div:nth-child(even){
+.cuerpoTexto>div:nth-child(2)>div:nth-child(even){
 	flex-direction: row-reverse;
 	text-align: end;
 }
 
 
-.cuerpoTexto section:nth-child(2) div img{
+.cuerpoTexto>div:nth-child(2) div img{
 	max-width: 300px;
 }
 
-.cuerpoTexto section:nth-child(2) div p{	
+.cuerpoTexto>div:nth-child(2) div p{	
 	text-decoration: none;	
 	color: var(--blue);
 }
 
-.cuerpoTexto section:nth-child(2) h4{
+.cuerpoTexto>div:nth-child(2) h4{
 	font-size: 2em;
 	text-transform: uppercase;
 }
@@ -108,7 +108,7 @@ En el siguiente CSS encontramos los estilos del Home Page
 		left: 150px;
 	}
 
-	.cuerpoTexto section:nth-child(2) div img {
+	.cuerpoTexto>div:nth-child(2) div img {
 		max-width: 200px;
 	}
   
@@ -128,24 +128,24 @@ En el siguiente CSS encontramos los estilos del Home Page
 	}
 
 	.portada h1{
-		font-size: 1.4em;
+		font-size: 2.4em;
 		left: 75px;
 	}
 
-	.cuerpoTexto section h2{
+	.cuerpoTexto>div h2{
 		font-size: 2em;
 	}
 
 
-	.cuerpoTexto section:nth-child(2) h4{
+	.cuerpoTexto>div:nth-child(2) h4{
 		font-size: 1.5em;
 	}
 
-	.cuerpoTexto section:nth-child(2) div img {
+	.cuerpoTexto>div:nth-child(2) div img {
 		max-width: 150px;
 	}
 
-	.cuerpoTexto section:nth-child(2)>div, .cuerpoTexto section:nth-child(2)>div:nth-child(even){
+	.cuerpoTexto>div:nth-child(2)>div, .cuerpoTexto>div:nth-child(2)>div:nth-child(even){
 		flex-direction: column;
 		text-align: center;
 	}

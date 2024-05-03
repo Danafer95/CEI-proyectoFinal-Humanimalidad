@@ -40,20 +40,16 @@ function homeInit(){
 
 	--------------------------------------------------------*/
 	const btnExplorar = document.querySelector(".portada button");
-	const toSection = document.querySelector(".cuerpoTexto section:first-child");
+	const toSection = document.querySelector(".cuerpoTexto>div:first-child");
 
 	btnExplorar.addEventListener('click', () => {
 		const topOfElement = toSection.offsetTop;
 		window.scrollTo({
 			top: topOfElement - 110,
-			behavior: 'smooth'  // This makes the scroll movement smooth
+			behavior: 'smooth'  
 		});
 	});
 }
-
-
-	
-	
 
 
 /*--------------------------------------------------------
@@ -198,21 +194,35 @@ function piecesInit(){
 
 
 
-//---------------------------------------------------------- PANELES
+/*--------------------------------------------------------
 
+	PANELES
+
+
+	Este codigo es para el funcionamiento de las tabs.
+--------------------------------------------------------*/
+
+
+
+//Asignamos a btnTabs todos los botones que son unestras tabs
 const btnTabs = document.querySelectorAll(".tabs button");
+
+//Asignamos a la constante paneles los paneles que vamos a abrir y cerrar con los botones
 const paneles = document.querySelectorAll(".panel");
 
+//A cada boton tab le agreamos un listener que al dar click, al dar click en el boton q no esta activo preguntamos si los otros elementos tienen la clase activo, si es asi vamos al elToggle(), el cual pasa la "i" para luego hacer un qutiarActivo a todo y un ponerActivo(i) al elemento que toca, y si no, quitarActivo para quitarles a todos. 
 
 btnTabs.forEach((obj,i)=>{
 	
 	obj.addEventListener("click", ()=>{
+		
 		!obj.classList.contains("activo") ? elToggle(i) : quitarActivo();
 	})
 
 });
 
-
+//Aquí llamamos a la funcion quitarActivo que se explica mas abajo
+//Aquí también llamamos a ponerActivo pasandole "i" como argumento
 
 function elToggle(i){
 	quitarActivo();
@@ -220,6 +230,7 @@ function elToggle(i){
 }
 
 
+//quitarActivo quita a todos los botones y paneles la clase ".activo"
 
 function quitarActivo(){
 	for(let i=0; i<btnTabs.length; i++){
@@ -228,17 +239,26 @@ function quitarActivo(){
 	}
 }
 
+//ponerActivo agrega al boton y panel la clase activo segun el "i" que se haya pasado
+
 function ponerActivo(i){
 	btnTabs[i].classList.add("activo");
 	paneles[i].classList.add("activo");
 }
 
-/*---------------NAV----------------*/
+/*--------------------------------------------------------
 
-const navegacion = document.querySelector("nav");
-const btnNav = document.querySelectorAll(".abrir , .cerrar");
+	MENU DESPLEGABLE
+		
+	En esta sección hacemos el toggle del menu principal, donde se vuelve 
+	un menu hamburguesa cuando el dispositivo es pequeño
 
+--------------------------------------------------------*/
 
+const navegacion = document.querySelector("nav"); //seleccionamos la navegación
+const btnNav = document.querySelectorAll(".abrir , .cerrar"); //seleccionamos .abrir y .cerrar  que son los botones que abren y cierran el menu
+
+//Aqui hacemos un for each para que cada boton al dar click hagamos un toggle entre la clase desplegado
 
 btnNav.forEach((obj)=>{
 

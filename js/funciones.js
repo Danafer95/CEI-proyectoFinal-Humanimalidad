@@ -20,17 +20,24 @@ function homeInit(){
 	//Decidi agarrar exactamente el punto inicial de como setie mi left en CSS para que si modifico a futuro esta posición se adapte
 	let startValueIMG = parseInt(window.getComputedStyle(tigreIMG).getPropertyValue('left'));
 	let startValueTitle = parseInt(window.getComputedStyle(tituloPrincipal).getPropertyValue('left'));
+
+	window.addEventListener("resize", ()=>{
+		startValueIMG = parseInt(window.getComputedStyle(tigreIMG).getPropertyValue('left'));
+		startValueTitle = parseInt(window.getComputedStyle(tituloPrincipal).getPropertyValue('left'));
+	});
 	
 	window.addEventListener("scroll", ()=>{
 		
 
 		let value = window.scrollY;
 		
-		console.log(startValueIMG, startValueTitle);
+		//console.log(startValueIMG, startValueTitle);
 
 		tigreIMG.style.left = (startValueIMG + (value * 0.1)) + "px"; //Para ser precisa con el valor usamos el starting point y le sumamos el valor de scrollY * 0.1 para que no sea muy grande el salto del scroll
 		tituloPrincipal.style.left = (startValueTitle - value) + "px"; //Aquí con el valor initial del titulo le vamos a restar el valor porq quiero q se mueva hacia la izquierda
 	})
+
+	
 
 	/*--------------------------------------------------------
 	scrollToSection()
@@ -57,7 +64,7 @@ function homeInit(){
 	
 	Parametros: ninguno
 	Que hace: La función es simplemente para que se active solo si el HTML de piezas lo llama. Dentro de ella
-			  vienen las funciones importantes para el mecanismo del 360 de las imagenes. 
+			  vienen las funciones importantes para el mecanismo del 360 de las imagenes y las tabs.
 
 --------------------------------------------------------*/
 
@@ -158,7 +165,7 @@ function piecesInit(){
 					laImagen.style.top = `-${posStart}px`;
 				}
 			}
-		        // Update startPosX to currentPosX for continuous movement tracking
+		        // Se actualiza el startPosX a currentPosX para que el tracking sea continuo 
 			startPosX = currentPosX;
 		}
 	}
@@ -187,64 +194,65 @@ function piecesInit(){
 	elContainer.addEventListener('mousemove', imageMove);
 	elContainer.addEventListener('touchmove', imageMove);
 
-
-
-}
-
-
-
-
-/*--------------------------------------------------------
-
-	PANELES
-
-
-	Este codigo es para el funcionamiento de las tabs.
---------------------------------------------------------*/
-
-
-
-//Asignamos a btnTabs todos los botones que son unestras tabs
-const btnTabs = document.querySelectorAll(".tabs button");
-
-//Asignamos a la constante paneles los paneles que vamos a abrir y cerrar con los botones
-const paneles = document.querySelectorAll(".panel");
-
-//A cada boton tab le agreamos un listener que al dar click, al dar click en el boton q no esta activo preguntamos si los otros elementos tienen la clase activo, si es asi vamos al elToggle(), el cual pasa la "i" para luego hacer un qutiarActivo a todo y un ponerActivo(i) al elemento que toca, y si no, quitarActivo para quitarles a todos. 
-
-btnTabs.forEach((obj,i)=>{
 	
-	obj.addEventListener("click", ()=>{
+
+	/*--------------------------------------------------------
+
+		PANELES
+
+
+		Este codigo es para el funcionamiento de las tabs.
+	--------------------------------------------------------*/
+
+
+
+	//Asignamos a btnTabs todos los botones que son unestras tabs
+	const btnTabs = document.querySelectorAll(".tabs button");
+
+	//Asignamos a la constante paneles los paneles que vamos a abrir y cerrar con los botones
+	const paneles = document.querySelectorAll(".panel");
+
+	//A cada boton tab le agreamos un listener que al dar click, al dar click en el boton q no esta activo preguntamos si los otros elementos tienen la clase activo, si es asi vamos al elToggle(), el cual pasa la "i" para luego hacer un qutiarActivo a todo y un ponerActivo(i) al elemento que toca, y si no, quitarActivo para quitarles a todos. 
+
+	btnTabs.forEach((obj,i)=>{
 		
-		!obj.classList.contains("activo") ? elToggle(i) : quitarActivo();
-	})
+		obj.addEventListener("click", ()=>{
+			
+			!obj.classList.contains("activo") ? elToggle(i) : quitarActivo();
+		})
 
-});
+	});
 
-//Aquí llamamos a la funcion quitarActivo que se explica mas abajo
-//Aquí también llamamos a ponerActivo pasandole "i" como argumento
+	//Aquí llamamos a la funcion quitarActivo que se explica mas abajo
+	//Aquí también llamamos a ponerActivo pasandole "i" como argumento
 
-function elToggle(i){
-	quitarActivo();
-	ponerActivo(i);
-}
-
-
-//quitarActivo quita a todos los botones y paneles la clase ".activo"
-
-function quitarActivo(){
-	for(let i=0; i<btnTabs.length; i++){
-		btnTabs[i].classList.remove("activo");
-		paneles[i].classList.remove("activo");
+	function elToggle(i){
+		quitarActivo();
+		ponerActivo(i);
 	}
+
+
+	//quitarActivo quita a todos los botones y paneles la clase ".activo"
+
+	function quitarActivo(){
+		for(let i=0; i<btnTabs.length; i++){
+			btnTabs[i].classList.remove("activo");
+			paneles[i].classList.remove("activo");
+		}
+	}
+
+	//ponerActivo agrega al boton y panel la clase activo segun el "i" que se haya pasado
+
+	function ponerActivo(i){
+		btnTabs[i].classList.add("activo");
+		paneles[i].classList.add("activo");
+	}
+
+
 }
 
-//ponerActivo agrega al boton y panel la clase activo segun el "i" que se haya pasado
 
-function ponerActivo(i){
-	btnTabs[i].classList.add("activo");
-	paneles[i].classList.add("activo");
-}
+
 
 /*--------------------------------------------------------
 
